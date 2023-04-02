@@ -6,11 +6,13 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 
 import { registerValidation, loginValidation, postCreateValidation } from './validations.js';
+
 import { handleValidationErrors, checkAuth } from './utils/index.js';
+
 import { UserController, PostController } from './controllers/index.js';
 
 mongoose
-  .connect('mongodb+srv://knit:c1e1s1@cluster0.zb0rpgf.mongodb.net/blog?retryWrites=true&w=majority')
+  .connect(process.env.MONGODB_URI)
   .then(() => console.log('DB ok'))
   .catch((err) => console.log('DB error', err));
 
@@ -59,7 +61,7 @@ app.patch(
   PostController.update,
 );
 
-app.listen(process.env.PORT || 4000, (err) => {
+app.listen(process.env.PORT || 4444, (err) => {
   if (err) {
     return console.log(err);
   }

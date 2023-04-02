@@ -13,7 +13,7 @@ export const getLastTags = async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(500).json({
-      message: 'Не удалось получить тэги',
+      message: 'Failed to get tags',
     });
   }
 };
@@ -25,7 +25,7 @@ export const getAll = async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(500).json({
-      message: 'Не удалось получить статьи',
+      message: 'Failed to get articles',
     });
   }
 };
@@ -48,13 +48,13 @@ export const getOne = async (req, res) => {
         if (err) {
           console.log(err);
           return res.status(500).json({
-            message: 'Не удалось вернуть статью',
+            message: 'Failed to return the article',
           });
         }
 
         if (!doc) {
           return res.status(404).json({
-            message: 'Статья не найдена',
+            message: 'No article was found',
           });
         }
 
@@ -64,7 +64,7 @@ export const getOne = async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(500).json({
-      message: 'Не удалось получить статьи',
+      message: 'Failed to get articles',
     });
   }
 };
@@ -81,13 +81,13 @@ export const remove = async (req, res) => {
         if (err) {
           console.log(err);
           return res.status(500).json({
-            message: 'Не удалось удалить статью',
+            message: 'Failed to delete article',
           });
         }
 
         if (!doc) {
           return res.status(404).json({
-            message: 'Статья не найдена',
+            message: 'No article was found',
           });
         }
 
@@ -99,7 +99,7 @@ export const remove = async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(500).json({
-      message: 'Не удалось получить статьи',
+      message: 'Failed to get articles',
     });
   }
 };
@@ -120,7 +120,7 @@ export const create = async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(500).json({
-      message: 'Не удалось создать статью',
+      message: 'Failed to create an article',
     });
   }
 };
@@ -148,7 +148,7 @@ export const update = async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(500).json({
-      message: 'Не удалось обновить статью',
+      message: 'Failed to update the articles',
     });
   }
 };
